@@ -9,18 +9,17 @@ const printValue = function(value) {
   const listItem = document.createElement('li');
   // Put the value we were passed into the li.
   listItem.innerText = value;
-  // functionFind the unordered list we've made into a results console.
-  const list = document.querySelector('.list')
+  // Find the unordered list we've made into a results console.
+  const list = document.querySelector('.result')
   // Append our list item to it.
   list.appendChild(listItem);
 }
 
 // Clears the list from the DOM.
 const clearList = function() {
-  let current = document.querySelector('.list > li');
-  while(current !== null) {
-    current.remove();
-    current = document.querySelector('.list > li');
+  const listItems = document.querySelectorAll('.result > li');
+  for (const listItem of listItems) {
+    listItem.remove();
   }
 }
 
@@ -129,19 +128,19 @@ const handleClickTitleify = function() {
  **************************/
 
 // Find the biggify button on our page. Put it in a variable (just to have one explicitly coded version!).
-const biggifyNumbersButton = document.querySelector('.big');
+const biggifyNumbersButton = document.querySelector('.biggify');
 // When it's clicked, launch the appropriate function.
 biggifyNumbersButton.addEventListener('click', handleClickBiggify);
 
 // Find the nasafy button on our page and, when it's clicked, launch the appropriate function.
-document.querySelector('.blastoff').addEventListener('click', handleClickNasafy);
+document.querySelector('.nasafy').addEventListener('click', handleClickNasafy);
 
 // Find the crazify button on our page and, when it's clicked, launch the appropriate function.
-document.querySelector('.crazy').addEventListener('click', handleClickCrazify);
+document.querySelector('.crazify').addEventListener('click', handleClickCrazify);
 
 // Find the reverse button on our page and, when it's clicked, launch the appropriate function.
-document.querySelector('.reverse').addEventListener('click', handleClickReversify);
+document.querySelector('.reversify').addEventListener('click', handleClickReversify);
 
 // Find the title case button on our page and, when it's clicked, launch the appropriate function.
-document.querySelector('.title').addEventListener('click', handleClickTitleify)
+document.querySelector('.titleify').addEventListener('click', handleClickTitleify)
 

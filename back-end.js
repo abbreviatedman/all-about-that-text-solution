@@ -46,6 +46,9 @@ const crazify = function(str) {
   return crazified;
 }
 
+if (typeof module === 'undefined') {
+  module = {};
+}
 
 module.exports = {
   biggify,
